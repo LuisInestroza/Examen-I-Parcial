@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbxItems = new System.Windows.Forms.ListBox();
+            this.lbxProductos = new System.Windows.Forms.ListBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAceptarInsertarDatos = new System.Windows.Forms.Button();
             this.txtComantarios = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbxItems);
+            this.groupBox1.Controls.Add(this.lbxProductos);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.btnAceptarInsertarDatos);
             this.groupBox1.Controls.Add(this.txtComantarios);
@@ -64,14 +64,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione el producto a realizar su reseña/análisis";
             // 
-            // lbxItems
+            // lbxProductos
             // 
-            this.lbxItems.FormattingEnabled = true;
-            this.lbxItems.ItemHeight = 18;
-            this.lbxItems.Location = new System.Drawing.Point(16, 29);
-            this.lbxItems.Name = "lbxItems";
-            this.lbxItems.Size = new System.Drawing.Size(205, 274);
-            this.lbxItems.TabIndex = 12;
+            this.lbxProductos.FormattingEnabled = true;
+            this.lbxProductos.ItemHeight = 18;
+            this.lbxProductos.Location = new System.Drawing.Point(16, 29);
+            this.lbxProductos.Name = "lbxProductos";
+            this.lbxProductos.Size = new System.Drawing.Size(205, 274);
+            this.lbxProductos.TabIndex = 12;
             // 
             // btnSalir
             // 
@@ -81,6 +81,7 @@
             this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAceptarInsertarDatos
             // 
@@ -186,7 +187,7 @@
         private System.Windows.Forms.Label lbValoracion;
         private System.Windows.Forms.Label lbNombreCompleto;
         private System.Windows.Forms.Label llbCorreroElectronico;
-        private System.Windows.Forms.ListBox lbxItems;
+        private System.Windows.Forms.ListBox lbxProductos;
     }
 }
 

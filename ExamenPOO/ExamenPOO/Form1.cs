@@ -45,7 +45,7 @@ namespace ExamenPOO
                 while (rd.Read())
                 {
                     // Listar los campos Name y FinishedGoodsFlag
-                    lbxItems.Items.Add(rd[0] + "\t" + rd[1]);
+                    lbxProductos.Items.Add(rd[0] + "\t" + rd[1]);
                 }
             }
             catch(SqlException exe)
@@ -76,12 +76,14 @@ namespace ExamenPOO
                 using (cmd)
                 {
                     // Paramametros para la insercion
-                    cmd.Parameters.Add("@IdProduct", SqlDbType.Int).Value =
+                    cmd.Parameters.Add("@IdProduct", SqlDbType.Int).Value = lbxProductos.SelectedItem.ToString();
                     cmd.Parameters.Add("@NameProduct", SqlDbType.NVarChar).Value = txtNombreCompleto.Text;
                     cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = txtCorreoElectronico.Text;
-                    cmd.Parameters.Add("@rating", SqlDbType.Int).Value = Convert.ToInt16(txtValoracion);
+                    cmd.Parameters.Add("@rating", SqlDbType.Int).Value = Convert.ToInt16(txtValoracion.Text);
                     cmd.Parameters.Add("@comments", SqlDbType.NVarChar).Value = txtComantarios.Text;
 
+                   
+                 
                 }
             }
             catch(SqlException exe)
@@ -91,11 +93,16 @@ namespace ExamenPOO
             finally
             {
                 // Cerrar la conexion
-
                 conn.Close();
             }
           
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            // Cerrar el formulario
+            this.Close();
         }
     }
 }

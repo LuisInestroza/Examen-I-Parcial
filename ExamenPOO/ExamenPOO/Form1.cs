@@ -83,6 +83,7 @@ namespace ExamenPOO
                     cmd.Parameters.Add("@comments", SqlDbType.NVarChar).Value = txtComantarios.Text;
 
                    
+                   
                  
                 }
             }

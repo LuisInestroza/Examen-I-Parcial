@@ -1,6 +1,6 @@
 ﻿namespace ExamenPOO
 {
-    partial class Form1
+    partial class frmReseñaAnalisis
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbxItems = new System.Windows.Forms.ListBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtMostarDatos = new System.Windows.Forms.TextBox();
             this.txtComantarios = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtValoracion = new System.Windows.Forms.TextBox();
@@ -45,9 +45,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbxItems);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.btnAceptar);
-            this.groupBox1.Controls.Add(this.txtMostarDatos);
             this.groupBox1.Controls.Add(this.txtComantarios);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtValoracion);
@@ -63,6 +63,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione el producto a realizar su reseña/análisis";
+            // 
+            // lbxItems
+            // 
+            this.lbxItems.FormattingEnabled = true;
+            this.lbxItems.ItemHeight = 18;
+            this.lbxItems.Location = new System.Drawing.Point(16, 29);
+            this.lbxItems.Name = "lbxItems";
+            this.lbxItems.Size = new System.Drawing.Size(205, 274);
+            this.lbxItems.TabIndex = 12;
             // 
             // btnSalir
             // 
@@ -81,14 +90,6 @@
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // txtMostarDatos
-            // 
-            this.txtMostarDatos.Location = new System.Drawing.Point(15, 29);
-            this.txtMostarDatos.Multiline = true;
-            this.txtMostarDatos.Name = "txtMostarDatos";
-            this.txtMostarDatos.Size = new System.Drawing.Size(210, 271);
-            this.txtMostarDatos.TabIndex = 9;
             // 
             // txtComantarios
             // 
@@ -156,14 +157,15 @@
             this.llbCorreroElectronico.TabIndex = 2;
             this.llbCorreroElectronico.Text = "Correo Electrónico";
             // 
-            // Form1
+            // frmReseñaAnalisis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 393);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Reseña/Análisi de Productos - AdventureWorks";
+            this.Name = "frmReseñaAnalisis";
+            this.Text = "Reseña/Análisis de Productos - AdventureWorks";
+            this.Load += new System.EventHandler(this.frmReseñaAnalisis_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -175,7 +177,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txtMostarDatos;
         private System.Windows.Forms.TextBox txtComantarios;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtValoracion;
@@ -184,6 +185,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbNombreCompleto;
         private System.Windows.Forms.Label llbCorreroElectronico;
+        private System.Windows.Forms.ListBox lbxItems;
     }
 }
 

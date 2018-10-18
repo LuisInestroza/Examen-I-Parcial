@@ -88,7 +88,7 @@ namespace ExamenPOO
             }
             catch(SqlException exe)
             {
-                MessageBox.Show(exe.Message + exe.StackTrace);
+                MessageBox.Show(exe.Message + exe.StackTrace, "Detalles de exepcion");
             }
             finally
             {

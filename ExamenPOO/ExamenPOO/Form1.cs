@@ -16,7 +16,7 @@ namespace ExamenPOO
     public partial class frmReseñaAnalisis : Form
     {
         // Crear la conexion a la base de datos 
-        SqlConnection conn = new SqlConnection(@"server = (local)/sqlexpress; integrated security = true; database = AdventureWorks2014");
+        SqlConnection conn = new SqlConnection(@"server = (local)\sqlexpress; integrated security = true; database = AdventureWorks2014");
 
         public frmReseñaAnalisis()
         {
@@ -26,8 +26,8 @@ namespace ExamenPOO
         private void frmReseñaAnalisis_Load(object sender, EventArgs e)
         {
             // Crear el query de Select
-
-            string sqlSel = @"SELECT Name, FinishedGoodsFlag  FROM Production.Product";
+            // En el campo FinishedGoodsFlag solo se mostrara los valores de '1'
+            string sqlSel = @"SELECT Name, FinishedGoodsFlag = '1' FROM Production.Product";
 
             // Crear el comando de ejecucion
             SqlCommand cmd = new SqlCommand(sqlSel, conn);
@@ -44,6 +44,7 @@ namespace ExamenPOO
                 // Listar los productos
                 while (rd.Read())
                 {
+                    // Listar los campos Name y FinishedGoodsFlag
                     lbxItems.Items.Add(rd[0] + "\t" + rd[1]);
                 }
             }
@@ -56,6 +57,44 @@ namespace ExamenPOO
                 // Cerrar la conexion
                 conn.Close();
             }
+
+        }
+
+        private void btnAceptarInsertarDatos_Click(object sender, EventArgs e)
+        {
+            // Crear el query de Insert
+            string sqlIns = @"INSERT INTO Production.ProductReview(ProductID, ReviewerName, EmailAddress, Rating, Comments) VALUES(@IdProduct, @NameProduct, @Email, @rating, @comments)";
+
+            // Crear el comando de ejecucion
+            SqlCommand cmd = new SqlCommand(sqlIns, conn);
+
+            try
+            {
+                // Abrir la conexion
+                conn.Open();
+
+                using (cmd)
+                {
+                    // Paramametros para la insercion
+                    cmd.Parameters.Add("@IdProduct", SqlDbType.Int).Value =
+                    cmd.Parameters.Add("@NameProduct", SqlDbType.NVarChar).Value = txtNombreCompleto.Text;
+                    cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = txtCorreoElectronico.Text;
+                    cmd.Parameters.Add("@rating", SqlDbType.Int).Value = Convert.ToInt16(txtValoracion);
+                    cmd.Parameters.Add("@comments", SqlDbType.NVarChar).Value = txtComantarios.Text;
+
+                }
+            }
+            catch(SqlException exe)
+            {
+                MessageBox.Show(exe.Message + exe.StackTrace);
+            }
+            finally
+            {
+                // Cerrar la conexion
+
+                conn.Close();
+            }
+          
 
         }
     }

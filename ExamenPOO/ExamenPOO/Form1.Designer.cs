@@ -31,13 +31,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbxItems = new System.Windows.Forms.ListBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnAceptarInsertarDatos = new System.Windows.Forms.Button();
             this.txtComantarios = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbComentarios = new System.Windows.Forms.Label();
             this.txtValoracion = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.txtNombreCompleto = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbValoracion = new System.Windows.Forms.Label();
             this.lbNombreCompleto = new System.Windows.Forms.Label();
             this.llbCorreroElectronico = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -47,13 +47,13 @@
             // 
             this.groupBox1.Controls.Add(this.lbxItems);
             this.groupBox1.Controls.Add(this.btnSalir);
-            this.groupBox1.Controls.Add(this.btnAceptar);
+            this.groupBox1.Controls.Add(this.btnAceptarInsertarDatos);
             this.groupBox1.Controls.Add(this.txtComantarios);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lbComentarios);
             this.groupBox1.Controls.Add(this.txtValoracion);
             this.groupBox1.Controls.Add(this.txtCorreoElectronico);
             this.groupBox1.Controls.Add(this.txtNombreCompleto);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lbValoracion);
             this.groupBox1.Controls.Add(this.lbNombreCompleto);
             this.groupBox1.Controls.Add(this.llbCorreroElectronico);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -82,14 +82,15 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // btnAceptar
+            // btnAceptarInsertarDatos
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(122, 320);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(138, 28);
-            this.btnAceptar.TabIndex = 10;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptarInsertarDatos.Location = new System.Drawing.Point(122, 320);
+            this.btnAceptarInsertarDatos.Name = "btnAceptarInsertarDatos";
+            this.btnAceptarInsertarDatos.Size = new System.Drawing.Size(138, 28);
+            this.btnAceptarInsertarDatos.TabIndex = 10;
+            this.btnAceptarInsertarDatos.Text = "Aceptar";
+            this.btnAceptarInsertarDatos.UseVisualStyleBackColor = true;
+            this.btnAceptarInsertarDatos.Click += new System.EventHandler(this.btnAceptarInsertarDatos_Click);
             // 
             // txtComantarios
             // 
@@ -100,14 +101,14 @@
             this.txtComantarios.Size = new System.Drawing.Size(275, 102);
             this.txtComantarios.TabIndex = 8;
             // 
-            // label4
+            // lbComentarios
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(266, 177);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 18);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Comentarios";
+            this.lbComentarios.AutoSize = true;
+            this.lbComentarios.Location = new System.Drawing.Point(266, 177);
+            this.lbComentarios.Name = "lbComentarios";
+            this.lbComentarios.Size = new System.Drawing.Size(94, 18);
+            this.lbComentarios.TabIndex = 4;
+            this.lbComentarios.Text = "Comentarios";
             // 
             // txtValoracion
             // 
@@ -130,14 +131,14 @@
             this.txtNombreCompleto.Size = new System.Drawing.Size(275, 24);
             this.txtNombreCompleto.TabIndex = 5;
             // 
-            // label3
+            // lbValoracion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Valoración";
+            this.lbValoracion.AutoSize = true;
+            this.lbValoracion.Location = new System.Drawing.Point(266, 129);
+            this.lbValoracion.Name = "lbValoracion";
+            this.lbValoracion.Size = new System.Drawing.Size(78, 18);
+            this.lbValoracion.TabIndex = 3;
+            this.lbValoracion.Text = "Valoración";
             // 
             // lbNombreCompleto
             // 
@@ -176,13 +177,13 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnAceptarInsertarDatos;
         private System.Windows.Forms.TextBox txtComantarios;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbComentarios;
         private System.Windows.Forms.TextBox txtValoracion;
         private System.Windows.Forms.TextBox txtCorreoElectronico;
         private System.Windows.Forms.TextBox txtNombreCompleto;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbValoracion;
         private System.Windows.Forms.Label lbNombreCompleto;
         private System.Windows.Forms.Label llbCorreroElectronico;
         private System.Windows.Forms.ListBox lbxItems;
